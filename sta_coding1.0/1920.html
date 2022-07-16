@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>1920-活動網頁</title>
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- 防止使用者做畫面縮放，將畫面鎖在縮放比例 100% -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 文件相容模式，加強程式碼對IE的相容性 -->
+    <meta name="referrer" content="unsafe-url"> <!-- 監測CROS所需code -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script><!-- 無論內容是否用到jQuery都必須寫入，才能讓GTM正常運作 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 文字icon-->
+
+    <link rel="stylesheet" href="src/style.css">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM代碼輸入區');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <!-- ※LP用|編集削除禁止 -->
+    <link href="#/VCommonFiles/css/app.css" rel=stylesheet>
+    <!-- ※LP用|編集削除禁止※ -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM代碼輸入區" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--倒數匯入 開始-->
+    <div class="countdown to_t">
+        <script src="src/countdown.js"></script>
+    </div>
+    <!--倒數匯入 end-->
+    <!-- CTA按鈕 開始-->
+    <a class="fixed-obj" pastr="cp_cta" href="#offer">
+        <img src="img/cta.gif">
+        <img src="img/cta_ph.gif">
+    </a>
+    <!-- CTA按鈕 結束-->
+    <script src="src/cta.js"></script>
+    <!-- CTA按鈕出現 -->
+    <div id="buyproduct"></div><!-- CTA按鈕出現-->
+
+    <section class="bg01">
+        <div class="content"><img src="img/c1.png" alt=""></div>
+    </section>
+    <section class="bg02">
+        <div class="content"><img src="img/c2.png" alt=""></div>
+    </section>
+
+    <div class="item final"></div> <!-- CTA按鈕離開-->
+    <!-- offer開始 -->
+    <section class="off01" id="offer">
+        <div class="content">
+            <img src="img/off_c01.png">
+            <div class="btn">
+                <a class="button shine" href="#lp_form" onclick="acsSelect('KUZU5G1BN2');">
+                    <img src="img/btn01.png"></a>
+            </div>
+        </div>
+    </section>
+    <section class="info">
+        <div class="content"><a href="mailto:info@ranman-global.com"><img src="img/info_c.png" alt=""></a>
+        </div>
+    </section>
+    <!-- 開合功能用js -->
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <!-- ※LP用|編集削除禁止 -->
+    <div id="acs_lp_form"></div>
+    <script src="#/VCommonFiles/js/app.min.js"></script>
+    <!-- ※LP用|編集削除禁止 -->
+</body>
+
+</html>
