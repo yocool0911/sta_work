@@ -1,0 +1,259 @@
+
+// _Rwd帶入**************
+@mixin pc_1920 {
+    @media (max-width:1920px) {
+        @content;
+    }
+
+}
+@mixin pc_900 {
+    @media (max-width:900px) {
+        @content;
+    }
+}
+@mixin ipad_768{
+    @media (max-width:768px) {
+        @content;
+    }
+}
+@mixin iphone_320 {
+    @media (max-width:320px) {
+        @content;
+    }
+}
+
+
+// 活動背景塊**************
+
+@mixin bgimg($bgimg){
+    background: url($bgimg) top center no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+
+
+// 按鈕閃爍*****************
+
+@mixin  shine {
+    /* ボタン自体のstyle */
+   .button{
+       display: inline-block;
+       border-radius: 10px;
+       transition: 0.8s;
+
+   }
+   .button:hover{
+       transform: translateY(5px);
+       opacity: 0.5;
+    }
+   /* 光らせるためのstyle */
+   .shine{
+       border: 2px solid transparent;
+       position: relative;
+       overflow: hidden;
+   }
+   /* 光の疑似要素 */
+   .shine::before{
+       content: "";
+       animation: shine 3s cubic-bezier(0.25, 0, 0.25, 1) infinite;
+       background-color: #fff;
+       width: 140%;
+       height: 100%;
+       transform: skewX(-45deg);
+       top: 0;
+       left: -160%;
+       opacity: 0.5;
+       position: absolute;
+   }
+   /* 光の動き */
+   @keyframes shine{
+       0% {
+       left: -160%;
+       opacity: 0;
+       }
+       70% {
+       left: -160%;
+       opacity: 0.5;
+       }
+       71% {
+       left: -160%;
+       opacity: 1;
+       }
+       100% {
+       left: -20%;
+       opacity: 0;
+       }
+   }
+}
+
+
+// 開合面板***********************
+
+@mixin  openbox(){
+
+/*     開合面板  start   */
+.accordion {
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.2s ease-out;
+    transition: max-height 0.2s ease-out;
+  }
+
+  /*     開合面板  end  */
+
+
+}
+
+
+
+/* ▼Countdown Timer▼ */
+
+@mixin countdown(){
+    .countdown {
+        position: sticky;
+        top:0;
+          background: #c00000;
+          background-size: cover;
+          padding: 10px 0;
+          width: 100%;
+          max-width: 1920px;
+          margin: 0 auto;
+          transition: all 1s;
+          z-index: 1;
+          display: none;
+      }
+
+      .countdown_content {
+          max-width: 900px;
+          margin: 0 auto;
+          font-family: 微軟正黑體, Meiryo, sans-serif, "Noto Sans TC";
+          font-weight: 700;
+          font-size: 2.5rem;
+          letter-spacing: 5px;
+          color: #fff;
+          text-shadow: 1px 1px 3px #410412;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: nowrap;
+          text-align: center;
+      }
+
+
+
+      #demo {
+          color: #fff;
+      }
+
+
+
+      @media screen and (max-width: 900px) {
+          .countdown {
+              padding: 3% 0;
+          }
+
+          .countdown_content {
+              font-size: 1.5rem;
+              letter-spacing: 3px;
+          }
+
+      }
+
+      @media screen and (max-width: 600px) {
+          .countdown_content {
+              font-size: 1.1rem;
+              letter-spacing: 1px;
+          }
+      }
+
+
+      /* ▲Countdown Timer▲ */
+      /* 英文版文字設定*/
+
+      .to_e .countdown_content {
+        font-size: 1.5rem;
+      }
+      @media screen and (max-width: 900px) {
+        .to_e .countdown {
+            padding: 3% 0;
+        }
+
+        .to_e .countdown_content {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+        }
+
+      }
+
+      @media screen and (max-width: 600px) {
+        .to_e .countdown_content {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+      }
+      /* 下面為個別設定*/
+
+
+}
+
+
+//cta按鈕
+
+@mixin cta(){
+
+    /* cta開始 */
+.fixed-obj {
+    position: fixed;
+    top: -380px;
+    right: 0;
+    max-width: 270px;
+    width: 100%;
+    z-index: 999;
+    -webkit-transition: top 0.5s ease-out;
+    transition: top 0.5s ease-out;
+  }
+
+  .fixed-obj.show_sta {
+    top: 105px;
+  }
+
+  /* 此行代表手機版的圖片隱藏 */
+  .fixed-obj img:nth-child(2) {
+    display: none !important;
+  }
+
+  @media screen and (max-width: 745px) {
+    .fixed-obj {
+      top: auto;
+      bottom: -360px;
+      width: 100%;
+      max-width: 100%;
+      -webkit-transition: bottom 0.5s ease-out;
+      transition: bottom 0.5s ease-out;
+    }
+    /* 此行代表手機版的圖片顯示 */
+    .fixed-obj img:nth-child(2) {
+      display: block !important;
+      width: 100%;
+      margin: 0 auto;
+    }
+    /* 此行代表電腦版的圖片隱藏 */
+    .fixed-obj img:nth-child(1) {
+      display: none !important;
+    }
+    .fixed-obj.show_sta {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  /* cta 結束 */
+}

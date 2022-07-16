@@ -1,0 +1,81 @@
+@import 'mixin';
+
+@charset "UTF-8";
+/*------------------------------------*\
+    $全域設定
+\*------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap");
+
+
+$web-width: 1920px ; //網站整體寬度
+$content-width: 900px ; // 內容寬度
+
+html{
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+  display: block;
+  max-width: $content-width;
+  width: 100%;
+  height: auto;
+
+}
+
+section {
+  position: relative;
+  display: block;
+  max-width: $web-width;
+}
+
+/*------------------------------------*\
+    $main
+\*------------------------------------*/
+.content {
+  position: relative;
+  margin: 0 auto;
+  max-width: $content-width;
+}
+.bg01{
+  @include bgimg("../img/b1.jpg");
+}
+.bg02{
+  @include bgimg("../img/b2.jpg");
+}
+
+.btn{
+  position: absolute;
+}
+
+.off01{
+  @include bgimg("../img/off01.jpg");
+  .btn{
+     width: 85%;
+     bottom: 4%;
+     left: 7.3%;
+  }
+}
+
+.info{
+  @include bgimg("../img/info.jpg");
+}
+
+/*------------------------------------*\
+    匯入機能
+\*------------------------------------*/
+
+
+@include countdown();
+@include cta();
+
+
+.w-900{
+  max-width: $content-width;
+}
